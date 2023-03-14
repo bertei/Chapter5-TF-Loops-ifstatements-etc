@@ -26,12 +26,13 @@ dynamic "<VAR_NAME>" {
 
 #Example
 dynamic "tag" {
-      for_each = var.custom_tags
-			content {
-				key = tag.key
-			    value = tag.value
-                propagate_at_launch = true
-		    } 
+    for_each = var.custom_tags
+    
+	content {
+		key = tag.key
+	    value = tag.value
+        propagate_at_launch = true
+	} 
 }
 ```
 * When using for_each with a list (toset(list)), the key will be the index and the value will be the item in the list at that index.
